@@ -24,6 +24,14 @@ def linear_regression(x):
 
 
 def plot_time_series(historical_today, kind, today_date):
+    ''' Returns the ax for a time series scatter plot showing historical
+    temperatures. Includes the line of best fit showing the historical trend.
+
+    historical_today: dataframe with the day's historical data
+    kind: either 'minimum' or 'maximum' for max or min temperature
+    today: the date we are compaing with
+    '''
+
     if kind=='maximum':
         col = 'Maximum temperature (°C)'
     elif kind=='minimum':
@@ -58,7 +66,12 @@ def add_label(violin, labels, label):
     labels.append((mpatches.Patch(color=color), label))
 
 def plot_distribution(historical_today, kind, today_date):
-    ''' Plots
+    ''' Returns an ax for violin plots showing the historical temperature
+    distrubution. One plot for all time and two overlapping plots for Pre 1980 and post 1980
+
+    historical_today: dataframe with the day's historical data
+    kind: either 'minimum' or 'maximum' for max or min temperature
+    today: the date we are compaing with
 
     '''
     if kind=='maximum':

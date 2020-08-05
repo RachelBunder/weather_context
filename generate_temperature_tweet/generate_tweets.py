@@ -19,7 +19,7 @@ def get_temp_summary(historical_today, kind, today):
     {descriptor} recorded {kind} for the {date}"
 
 
-    Historical today: dataframe with the day's historical data
+    historical_today: dataframe with the day's historical data
     kind: either 'minimum' or 'maximum'
     today: the date we are compaing with
 
