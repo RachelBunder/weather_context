@@ -50,56 +50,10 @@ def lambda_handler(event, context):
                          tweet_json['media'],
                          tweet_json['alt_text'])
 
-    print({
-        'statusCode': 200,
-        'body': f"tweet succeeded, {str(event)}",
-        'tweet_status': status,
-        'tweet_json': json.dumps(tweet_json)
-    })
+
     return {
         'statusCode': 200,
         'body': f"tweet succeeded, {str(event)}",
         'tweet_status': status,
         'tweet_json': json.dumps(tweet_json)
     }
-
-event = {
-  "Records": [
-    {
-      "eventVersion": "2.1",
-      "eventSource": "aws:s3",
-      "awsRegion": "ap-southeast-2",
-      "eventTime": "2020-05-16T20:51:28.554Z",
-      "eventName": "ObjectCreated:Put",
-      "userIdentity": {
-        "principalId": "AJUMLNLUY38U"
-      },
-      "requestParameters": {
-        "sourceIPAddress": "119.18.3.228"
-      },
-      "responseElements": {
-        "x-amz-request-id": "EA36DDCEDB710CE7",
-        "x-amz-id-2": "wexLF0IijnquCctyPWZ28RTnew7oNQCMbv5O9bj7k6Ti+aYOTmKN1sLATLinn5eZLMQ/1JdRgFsr1Ryij3MBrO/SAxQs5hF4"
-      },
-      "s3": {
-        "s3SchemaVersion": "1.0",
-        "configurationId": "bad1dca8-147d-4887-a599-98c9228f4d2d",
-        "bucket": {
-          "name": "bom-bot",
-          "ownerIdentity": {
-            "principalId": "AJUMLNLUY38U"
-          },
-          "arn": "arn:aws:s3:::bom-bot"
-        },
-        "object": {
-          "key": "tweets/2020-08-05-maximum.json",
-          "size": 165,
-          "eTag": "38b30c2fb26a92da7230e17539149db3",
-          "sequencer": "005EC052517BF7719A"
-        }
-      }
-    }
-  ]
-}
-if __name__ == '__main__':
-    lambda_handler(event, None)
