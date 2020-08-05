@@ -85,7 +85,8 @@ def get_temp_summary(historical_today, kind, today):
     return text
 
 def lambda_handler(event, context):
-    ''' Tweets each day the maximum and minimum temperature in context'''
+    ''' Creates JSON file containing tweet info for the the maximum and minimum
+    temperature in context'''
 
     # Getting historical data
     today = date.today()
