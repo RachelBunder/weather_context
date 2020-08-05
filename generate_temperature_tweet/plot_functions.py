@@ -67,7 +67,8 @@ def add_label(violin, labels, label):
 
 def plot_distribution(historical_today, kind, today_date):
     ''' Returns an ax for violin plots showing the historical temperature
-    distrubution. One plot for all time and two overlapping plots for Pre 1980 and post 1980
+    distrubution. One plot for all time and two overlapping plots for Pre 1980
+    and post 1980.
 
     historical_today: dataframe with the day's historical data
     kind: either 'minimum' or 'maximum' for max or min temperature
@@ -76,10 +77,8 @@ def plot_distribution(historical_today, kind, today_date):
     '''
     if kind=='maximum':
         col = 'Maximum temperature (°C)'
-        historical_today['rank'] = historical_today[col].rank(method='max')
     elif kind=='minimum':
         col = 'Minimum temperature (°C)'
-        historical_today['rank'] = historical_today[col].rank(method='max')
     else:
         return
 
@@ -124,3 +123,48 @@ def plot_distribution(historical_today, kind, today_date):
     plt.legend(*zip(*labels), loc=6)
 
     return ax
+
+def plot_distribution_alt_text(historical_today, kind, today_date):
+    ''' Creates alt text for the distribution graphs
+    Alt text "Three violin plots showing the {kind} temperature distribution
+    for all time, pre 1980 and post 1980. The all time minimum is {all_time_min}, the maximum is {all_time_max} and
+    mean is {all_time_mean}. The pre 1980 minimum is is {pre_min}, the maximum is {pre_max} and
+    mean is {pre_mean}. The post 1980 minimum is is {post_min}, the maximum is {post_max} and
+    mean is {post_mean}" '''
+
+
+    if kind=='maximum':
+        col = 'Maximum temperature (°C)'
+    elif kind=='minimum':
+        col = 'Minimum temperature (°C)'
+    else:
+        return
+
+    all_time_min = historical_today[col].min()
+    all_time_max = historical_today[col].max()
+    all_time_mean = historical_today[col].mean()
+
+    pre1980 = historical_today[historical_today['Year']<1980]
+    pre_min = pre1980[col].min()
+    pre_max = pre1980[col].max()
+    pre_mean = pre1980[col].mean()
+
+    post1980 = historical_today[historical_today['Year']>=1980]
+    post_min = post1980[col].min()
+    post_max = post1980[col].max()
+    post_mean = post1980[col].mean()
+
+
+    text = f'Three violin plots showing the {kind} temperature distribution'\
+           f'for all time, pre 1980 and post 1980. The all time minimum is '\
+           f'{all_time_min}, the maximum is {all_time_max} and the mean is '\
+           f'{all_time_mean}. The pre 1980 minimum is is {pre_min}, the '\
+           f'maximum is {pre_max} and the mean is {pre_mean}. The post 1980 '\
+           f'minimum is is {post_min}, the maximum is {post_max} and the '\
+           f'mean is {post_mean}'
+
+    return text
+
+
+
+
