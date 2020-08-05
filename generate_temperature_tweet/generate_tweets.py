@@ -6,7 +6,7 @@ from datetime import date
 import os
 import json
 
-from plot_functions import plot_time_series, plot_distribution, plot_distribution_alt_text
+from plot_functions import plot_time_series, plot_distribution, distribution_alt_text
 from s3_functions import get_historical_data, plt_to_s3, json_to_s3
 
 from localities import S3_BUCKET, HISTORICAL_OBS_LOC, TWEET_PATH, TWEET_MEDIA_PATH
@@ -109,23 +109,23 @@ def lambda_handler(event, context):
     }
 
     # Create plots
-    fig_timeseries = plot_time_series(historical_today, kind, today)
+    ax_timeseries, timeseries_alt = plot_time_series(historical_today,
+                                                      kind,
+                                                      today)
     timeseries_loc = os.path.join(TWEET_MEDIA_PATH,
                                   today.strftime(f'%Y-%m-%d-{kind}-timeseries.png'))
-    plt_to_s3(fig_timeseries, S3_BUCKET, timeseries_loc)
+    plt_to_s3(ax_timeseries, S3_BUCKET, timeseries_loc)
 
-    ax_distplot = plot_distribution(historical_today, kind, today)
+    ax_distplot, distplot_alt = plot_distribution(historical_today, kind, today)
     distplot_loc = os.path.join(TWEET_MEDIA_PATH,
                                 today.strftime(f'%Y-%m-%d-{kind}-distplot.png'))
     plt_to_s3(ax_distplot, S3_BUCKET, distplot_loc)
 
-    distplot_alttext =plot_distribution_alt_text(historical_today, kind, today)
 
     # Collate data and save to s3
     tweet_data = json.dumps({'body':summary,
                              'media': [timeseries_loc, distplot_loc],
-                             'alt_text': [distplot_alttext]})
-
+                             'alt_text': [timeseries_alt, distplot_alt]})
 
     json_loc = os.path.join(TWEET_PATH, today.strftime(f'%Y-%m-%d-{kind}.json'))
     json_to_s3(tweet_data, S3_BUCKET, json_loc)
@@ -134,6 +134,3 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': json.dumps(f'Created tweet {str(tweet_data)} stored at {json_loc}')
     }
-
-if __name__ == '__main__':
-    lambda_handler({"kind": "maximum"}, None)
