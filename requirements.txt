@@ -6,8 +6,10 @@ https://repo.anaconda.com/pkgs/main/osx-64/blas-1.0-mkl.conda
 https://repo.anaconda.com/pkgs/main/osx-64/ca-certificates-2020.6.24-0.conda
 https://repo.anaconda.com/pkgs/main/osx-64/intel-openmp-2019.4-233.conda
 https://repo.anaconda.com/pkgs/main/osx-64/libcxx-10.0.0-1.conda
+https://repo.anaconda.com/pkgs/main/osx-64/libiconv-1.16-h1de35cc_0.conda
 https://repo.anaconda.com/pkgs/main/osx-64/xz-5.2.5-h1de35cc_0.conda
 https://repo.anaconda.com/pkgs/main/osx-64/zlib-1.2.11-h1de35cc_3.conda
+https://repo.anaconda.com/pkgs/main/osx-64/icu-58.2-h0a44026_3.conda
 https://repo.anaconda.com/pkgs/main/osx-64/libffi-3.3-hb1e8313_2.conda
 https://repo.anaconda.com/pkgs/main/osx-64/libpng-1.6.37-ha441bb4_0.conda
 https://repo.anaconda.com/pkgs/main/osx-64/mkl-2019.4-233.conda
@@ -16,7 +18,9 @@ https://repo.anaconda.com/pkgs/main/osx-64/openssl-1.1.1g-h1de35cc_0.conda
 https://repo.anaconda.com/pkgs/main/osx-64/tk-8.6.10-hb0a8c7a_0.conda
 https://repo.anaconda.com/pkgs/main/osx-64/freetype-2.10.2-ha233b18_0.conda
 https://repo.anaconda.com/pkgs/main/osx-64/libedit-3.1.20191231-h1de35cc_1.conda
+https://repo.anaconda.com/pkgs/main/osx-64/libxml2-2.9.10-h3b9e6c8_1.conda
 https://repo.anaconda.com/pkgs/main/osx-64/readline-8.0-h1de35cc_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/libxslt-1.1.34-h83b36ba_0.conda
 https://repo.anaconda.com/pkgs/main/osx-64/sqlite-3.32.3-hffcf06c_0.conda
 https://repo.anaconda.com/pkgs/main/osx-64/python-3.8.5-h26836e1_1.conda
 https://repo.anaconda.com/pkgs/main/osx-64/certifi-2020.6.20-py38_0.conda
@@ -24,6 +28,7 @@ https://repo.anaconda.com/pkgs/main/osx-64/docutils-0.15.2-py38_0.conda
 https://repo.anaconda.com/pkgs/main/noarch/idna-2.10-py_0.conda
 https://repo.anaconda.com/pkgs/main/noarch/jmespath-0.10.0-py_0.conda
 https://repo.anaconda.com/pkgs/main/osx-64/kiwisolver-1.2.0-py38h04f5b5a_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/lxml-4.5.2-py38h63b7cb6_0.conda
 https://repo.anaconda.com/pkgs/main/noarch/pycparser-2.20-py_2.conda
 https://repo.anaconda.com/pkgs/main/noarch/pyparsing-2.4.7-py_0.conda
 https://repo.anaconda.com/pkgs/main/osx-64/pysocks-1.7.1-py38_1.conda
