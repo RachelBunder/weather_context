@@ -1,8 +1,6 @@
 # Weather Context
 
-Weather context is a twitter bot that tweets the daily weather measured at Sydney Observatory Hill in its historical context. The data is from Bureau of Metereology.
-
-This was mostly motivated by
+Weather context is a twitter bot that tweets the daily weather measured at Sydney Observatory Hill in its historical context. The data is from Bureau of Meteorology.
 
 My favourite part of weather reports is when they give some context like "Hotest recorded August day" and I wanted to see more of that. When I started to look at the graphs I also noted the consistent upward trend and I wanted to explore that more and see how much the temperature has changed  in recent times (but I'm not a climate scientist and this bot in _[#Weather-context-does-not-prove-climate-change](#this-does-not-prove-climate-change)_).
 
