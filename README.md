@@ -12,29 +12,14 @@ This twitterbot relies on 4 separate lambda functions:
 * Update BOM Oberservation Observatory hills: get the __[daily weather observation](http://www.bom.gov.au/climate/dwo/IDCJDW2124.latest.shtml)__ for Observatory hill using the BOM API. This is only updated daily when the official numbers come out.
 * Update BOM Oberservatory hills scraper: every hour it scrapes __[the latest Sydney Observations](http://www.bom.gov.au/nsw/observations/sydney.shtml)__ to find the currently recorded daily minimum and maximum.
 * Generate temperate tweet: generates temperature tweets based on the minimum or maximum daily temperature.
-* Send tweet: monitors the s3 bucket where tweets are stored. When a new one is created it is imediately tweeted
+* Send tweet: monitors the S3 bucket where tweets are stored. When a new one is created it is imediately tweeted
 
-## Minimum and maximum temperatures
-The Bureau of Metereology measures
 
 ## Weather context does not prove climate change
 
 Climate change is completely real, there is plenty of science on it. This twitter bot is not real science. It is only looking at single days of weather and in many ways not providing much actual context. It is only looking at Sydney, not considering weather patterns like El Niño or La Niña and a host of other factos that real climate scientist consider.
 
 It is only meant as an interesting tool to show what the temperature has been in one specific place over the last 160 years.
-
-
-
-## Other notes
-**There are so many record days. Isn't this a sign of global warming?**
-Write up on statistical chance etc. I am not a climate scientist
-
-**The minimum temperature is not the actual minimum**
-Explanation on how the BOM calculates the min as of 9am.
-
-** How is likely/unlikely etc. calculated?
-On reflection, I should fix that up
-
 
 ## Future plans
 * Add today in the violin plots
