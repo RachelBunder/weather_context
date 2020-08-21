@@ -57,7 +57,7 @@ def get_temp_summary(historical_today, kind, today):
         descriptor = 'coldest'
         rank = rank + 1
     else:
-        descriptor = 'hotest'
+        descriptor = 'hottest'
         rank = num_records - rank + 1
 
     suf = lambda n: "%d%s"%(n,{1:"st",2:"nd",3:"rd"}.get(n if n%100<20 else n%10,"th"))
