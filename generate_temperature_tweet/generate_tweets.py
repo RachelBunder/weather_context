@@ -21,7 +21,7 @@ def get_temp_summary(historical_today, kind, today):
 
     historical_today: dataframe with the day's historical data
     kind: either 'minimum' or 'maximum'
-    today: the date we are compaing with
+    today: the date we are comparing with
 
     '''
 
@@ -80,7 +80,7 @@ def get_temp_summary(historical_today, kind, today):
     else:
         likelihood_statement = "very unlikely"
 
-    text = f"Today's {kind} temperature, {today_temp}C, was {likelihood_statement} at {avg_diff:.1f}C {avg_change} the average. It is the{rank_phrase} {descriptor} recorded {kind} for the {date}"
+    text = f"Today's {kind} temperature, {today_temp}C, was {likelihood_statement} at {avg_diff:.1f}C {avg_change} the average. It is the{rank_phrase} {descriptor} recorded {kind} for the {date}. #sydneyweather"
 
     return text
 
